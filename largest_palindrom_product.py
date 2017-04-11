@@ -8,15 +8,17 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        x= 10**n - 1
-        m = n-1
-        while x > 10**m -1 :
+        x = 10**n - 1
+        maxpal = 0
+        while x > 10**(n-1)-1:
             y = x-1
-            while y > 10**m -1:
-                p = x * y
-                if str(p) == str(p)[::-1]:    # check if original string and reverse strings are equal
-                    q = p % 1337
-                    return q
-                y = y-1
-                
+            while y > 10**(n-1)-1:
+                p = x*y
+                if str(p)==str(p)[::-1]:
+                    if p > maxpal:
+                        maxpal = p
+                y = y -1
             x = x-1
+        q = maxpal%1337
+        return q
+        
