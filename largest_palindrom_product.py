@@ -14,7 +14,7 @@ class Solution(object):
             y = x-1
             while y > 10**m -1:
                 p = x * y
-                if str(p) == str(p)[::-1]:
+                if str(p) == str(p)[::-1]:    # check if original string and reverse strings are equal
                     q = p % 1337
                     return q
                 y = y-1
